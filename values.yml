@@ -1,32 +1,3 @@
-Pipeline:
-  name: test_pipeline
-
-GitRepo:
-  name: mtzavellas/griff4
-  gitProvider: github
+myRepo:
+  gitProvider: MakasGit
   path: mtzavellas/griff4
-  branches:
-    exclude: 'master'
-    include: {{gitBranch}}
-
-artifactoryIntegration: art
-
-Image:
-  name: fooImage
-  sourceRepository: foo
-  autoPull: false
-
-DockerBuild:
-  name: foobuild
-  dockerImageName: foo
-  dockerFileName: foo
-  dockerFileLocation: '.'
-  dockerImageTag: ${run_number}
-
-DockerPush:
-  name: foopush
-  targetRepository: foo
-
-BuildInfo:
-  autoPublishBuildInfo: true
-  name: fooBuildInfo
